@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #FFDAB9, #FFB6C1);
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.navbar {
+    margin-left: 1300px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 2; /* Set a higher z-index to ensure it's on top */
+}
+
+.navbar a {
+    color: rgb(112, 110, 110);
+    text-decoration: none;
+    padding: 14px 10px;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.central-container {
+    background-color: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(200px);
+    -webkit-backdrop-filter: blur(200px);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    display: flex;
+    flex-direction: row; /* Stack children horizontally */
+    align-items: center; /* Align children vertically */
+}
+
+.content {
+    flex-grow: 1;
+    padding-left: 50px;
+    text-align: left;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.content h1 {
+    margin: 0;
+    color: #F28585;
+    font-size: 5em;
+    font-weight: bold;
+}
+
+.content h5 {
+    margin: 0;
+    font-size: 1.5em;
+    color: rgb(129, 126, 126);
+}
+
+.sample-image {
+    flex-shrink: 0;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 15px;
+}
+
+.sample-image img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+}
