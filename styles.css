@@ -1,5 +1,5 @@
 :root {
-    --background-light: #FFDAB9;
+    --background-light: linear-gradient(35deg, #FFE4E4, #FFCCCC, #CAA6A6);
     --background-dark: #333;
     --text-light: #70706E;
     --text-dark: #ddd;
@@ -11,7 +11,7 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Poppins;
     background: var(--background-light);
     display: flex;
     flex-direction: column;
@@ -66,25 +66,70 @@ body.dark-mode {
     color: var(--text-light);
     text-decoration: none;
     padding: 14px 10px;
-    display: block;
+    display: inline-block;
+    position: relative; 
+    transition: transform 0.3s ease, color 0.3s ease; /* floating sec*/
 }
 
-.navbar a:hover {
-    background-color: var(--navbar-hover-light);
-    color: black;
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /*thickness of the line */
+    background-color: #F28585; /* Color of the line */
+    transition: width 0.3s ease; /*transition for the line */
 }
 
-body.dark-mode .navbar {
-    background-color: var(--background-dark);
+.navbar a:hover::after,
+.navbar a:focus::after,
+.navbar a:active::after {
+    width: 100%; /* Expand the line  */
 }
 
+.navbar a:hover,
+.navbar a:focus,
+.navbar a:active {
+    color: #F28585; /* Change text color on hover/focus/active */
+    transform: translateY(-8px); 
+}
+
+/* darkmode navbar */
 body.dark-mode .navbar a {
-    color: var(--text-dark);
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 14px 10px;
+    display: inline-block;
+    position: relative; 
+    transition: transform 0.3s ease, color 0.3s ease; 
 }
 
-body.dark-mode .navbar a:hover {
-    background-color: var(--navbar-hover-dark);
+body.dark-mode .navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #F28585; 
+    transition: width 0.3s ease; 
 }
+
+body.dark-mode .navbar a:hover::after,
+body.dark-mode .navbar a:focus::after,
+body.dark-mode .navbar a:active::after {
+    width: 100%; 
+}
+
+body.dark-mode .navbar a:hover,
+body.dark-mode .navbar a:focus,
+body.dark-mode .navbar a:active {
+    color: #F28585; 
+    transform: translateY(-8px); 
+}
+
+/*end darkmode navbar*/
 
 .mode-toggle {
     cursor: pointer;
@@ -141,3 +186,59 @@ body.dark-mode .navbar a:hover {
 body.dark-mode .sample-image img {
     border: 8px solid #F28585; 
 }
+
+/* content sections */
+.content-section {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+
+/* ontent section headings */
+.content-section h2 {
+    color: #F28585; 
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* content section paragraphs */
+.content-section p {
+    font-size: 1.2em;
+    color: var(--text-light);
+}
+
+body.dark-mode .content-section {
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: var(--text-dark); 
+}
+
+/* two-column layout */
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.about-left {
+    flex: 0 0 48%; /*  width*/
+}
+
+.about-right {
+    flex: 0 0 48%; 
+}
+
+/* styling for the two columns */
+.about-left h3,
+.about-right h3 {
+    color: #F28585; 
+}
+
+.about-left p,
+.about-right p {
+    color: #F28585; /*text color*/
+}
+

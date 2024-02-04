@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <title>Cherry Lou</title>
 </head>
 <body>
@@ -12,31 +13,111 @@
             <div class="navbar-toggle" onclick="toggleDarkMode()">
                 <span class="icon">&#9788;</span>
             </div>
-            <a href="index.html">Home</a>
-            <a href="#about">About</a>
+            <a href="index.html#content-home">Home</a>
+            <a href="#content-about">About</a>
             <a href="#education">Education</a>
             <a href="#experience">Experience</a>
             <a href="#expertise">Expertise</a>
             <a href="#achievements">Achievements</a>
         </div>
-
+       <!--homepage content -->
+    <div class="content" id="content-home">
         <div class="content-and-image">
             <div class="content">
                 <h5>Hello, I'm</h5>
-                <h1>Cherry Lou</h1>
+                <h1><span id="typed-output"></span></h1>
                 <h5>Bachelor of Science in Information Technology</h5>
             </div>
-
             <div class="sample-image">
                 <img src="C:\Users\Ash\Downloads\365933574_7185705894777109_3900267050869234790_n.jpg" alt="Sample Image">
             </div>
         </div>
     </div>
 
+    <div class="central-container" id="content-about">
+        <!-- About Section -->
+        <div class="content-section about-section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-left">
+                    <h3>Biography</h3>
+                    <p>
+                        Greetings! I am a 21-year-old Filipino woman of Cebuano ethnicity, currently pursuing a Bachelor of Science in Information Technology (BSIT) at WMSU. As a Roman Catholic, my faith guides my values. Single and enthusiastic about personal and academic growth, I embrace the richness of my cultural heritage.</p>
+
+                    <!-- other left content -->
+                </div>
+                <div class="about-right">
+                    <h3>Professional Activity</h3>
+                    <p>
+                        Greetings! I am a 21-year-old Filipino woman of Cebuano ethnicity, currently pursuing a Bachelor of Science in Information Technology (BSIT) at WMSU. As a Roman Catholic, my faith guides my values. Single and enthusiastic about personal and academic growth, I embrace the richness of my cultural heritage.</p>
+
+                    <!--other right content -->
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Education Section -->
+    <div class="central-container" id="education">
+        <div class="content-section">
+            <h2>My Learning Journey</h2>
+            <p>
+                Greetings! I am a 21-year-old Filipino woman of Cebuano ethnicity, currently pursuing a Bachelor of Science in Information Technology (BSIT) at WMSU. As a Roman Catholic, my faith guides my values. Single and enthusiastic about personal and academic growth, I embrace the richness of my cultural heritage.</p>
+        </div>
+    </div>
+           <!-- Experience Section -->
+    <div class="central-container" id="experience">
+        <div class="content-section">
+            <h2>My Experience</h2>
+            <p>
+                Greetings! I am a 21-year-old Filipino woman of Cebuano ethnicity, currently pursuing a Bachelor of Science in Information Technology (BSIT) at WMSU. As a Roman Catholic, my faith guides my values. Single and enthusiastic about personal and academic growth, I embrace the richness of my cultural heritage.</p>
+        </div>
+    </div>
+
+        <!--EXPERTISE-->
+        <div class="content-section" id="expertise">
+            <h2>My Expertise</h2>
+            <p>
+                Greetings! I am a 21-year-old Filipino woman of Cebuano ethnicity, currently pursuing a Bachelor of Science in Information Technology (BSIT) at WMSU. As a Roman Catholic, my faith guides my values. Single and enthusiastic about personal and academic growth, I embrace the richness of my cultural heritage.</p>
+        </div>
+        <!--EXPERTISE end-->
+
+        <!--ACHIEVEMENTS-->
+        <div class="content-section" id="achievements">
+            <h2>My Achievements</h2>
+            <p>
+                Greetings! I am a 21-year-old Filipino woman of Cebuano ethnicity, currently pursuing a Bachelor of Science in Information Technology (BSIT) at WMSU. As a Roman Catholic, my faith guides my values. Single and enthusiastic about personal and academic growth, I embrace the richness of my cultural heritage.</p>
+        </div>
+        <!--ACHIEVEMENTS end-->
+
+    </div>
+
     <script>
+        // darkmode
         function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-    }
+            document.body.classList.toggle("dark-mode");
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Text for typing effect
+            const typedText = ["Cherry Lou"];
+
+            // run Typed.js
+            const options = {
+                strings: typedText,
+                typeSpeed: 200, // typing speed in mm
+                loop: true, // for infinite typing
+            };
+
+            const typed = new Typed("#typed-output", options);
+        });
+           document.addEventListener("DOMContentLoaded", function() {
+        const targetSection = document.getElementById('content-home');
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
     </script>
 </body>
 </html>
