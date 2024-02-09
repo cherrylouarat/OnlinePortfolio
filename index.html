@@ -6,17 +6,18 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!--NAVLINK ICONS-->
+    
     <title>Cherry Lou</title>
 </head>
 <body>
-    <div class="central-container">
+    <div class="central-container" id="content-home">
         <div class="navbar">
             <div class="navbar-toggle" onclick="toggleDarkMode()">
                 <span class="icon">&#9788;</span>
             </div>
             <a href="#content-home">Home</a>
             <a href="#content-about">About</a>
-            <a href="#education">Education</a>
+            <a href="#content-educ">Education</a>
             <a href="#experience">Experience</a>
             <a href="#expertise">Expertise</a>
             <a href="#achievements">Achievements</a>
@@ -36,18 +37,53 @@
         </div>
     
         <!-- About Section -->
-        <div class="central-container" id="content-about"></div>
         <div class="navbar-left">
             <div class="navbar-left-links">
                 <div class="navbar-toggle" onclick="toggleDarkMode()">
                     <span class="icon">&#9788;</span>
                 </div>
-                <a href="index.html" ><i class="fas fa-home"></i><span>Home</span></a>
+                <a href="#content-home">
+                    <div class="circle">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+                <a href="#content-about">
+                    <div class="circle">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </div>
+                </a>
+                <a href="#content-educ">
+                    <div class="circle">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </div>
+                </a>
+                <a href="#content-experience">
+                    <div class="circle">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Experience</span>
+                    </div>
+                </a>
+                <a href="#content-expertise">
+                    <div class="circle">
+                        <i class="fas fa-code"></i>
+                        <span>Expertise</span>
+                    </div>
+                </a>
+                <a href="#content-achievements">
+                    <div class="circle">
+                        <i class="fas fa-trophy"></i>
+                        <span>Achievements</span>
+                    </div>
+                </a>
+               <!-- <a href="#content-home" ><i class="fas fa-home"></i><span>Home</span></a>
                 <a href="#content-about" ><i class="fas fa-info-circle"></i><span>About</span></a>
-                <a href="#education"><i class="fas fa-graduation-cap"></i><span>About</span></a>
-                <a href="#experience"><i class="fas fa-briefcase"></i><span>About</span></a>
-                <a href="#expertise"><i class="fas fa-code"></i><span>About</span></a>
-                <a href="#achievements"><i class="fas fa-trophy"></i><span>About</span></a>
+                <a href="#content-educ"><i class="fas fa-graduation-cap"></i><span>Education</span></a>
+                <a href="#experience"><i class="fas fa-briefcase"></i><span>Experience</span></a>
+                <a href="#expertise"><i class="fas fa-code"></i><span>Expertise</span></a>
+                <a href="#achievements"><i class="fas fa-trophy"></i><span>Achievements</span></a>-->
             </div>
         </div>
         <div class="central-container" id="content-about">
@@ -145,54 +181,198 @@
                     </div>
                 </div>
             </div>
-    <script>
-        // darkmode
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-        }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            // Text for typing effect
-            const typedText = ["Cherry Lou"];
 
-            // run Typed.js
-            const options = {
-                strings: typedText,
-                typeSpeed: 200, // typing speed in mm
-                loop: true, // for infinite typing
-            };
+        <!--Education--> 
+        <div class="navbar-left">
+            <div class="navbar-left-links">
+                <div class="navbar-toggle" onclick="toggleDarkMode()">
+                    <span class="icon">&#9788;</span>
+                </div>
+                <a href="#content-home">
+                    <div class="circle">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </div>
+                </a>
+                <a href="#content-about">
+                    <div class="circle">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </div>
+                </a>
+                <a href="#content-educ">
+                    <div class="circle">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Education</span>
+                    </div>
+                </a>
+                <a href="#content-experience">
+                    <div class="circle">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Experience</span>
+                    </div>
+                </a>
+                <a href="#content-expertise">
+                    <div class="circle">
+                        <i class="fas fa-code"></i>
+                        <span>Expertise</span>
+                    </div>
+                </a>
+                <a href="#content-achievements">
+                    <div class="circle">
+                        <i class="fas fa-trophy"></i>
+                        <span>Achievements</span>
+                    </div>
+                </a>
+               <!-- <a href="#content-home" ><i class="fas fa-home"></i><span>Home</span></a>
+                <a href="#content-about" ><i class="fas fa-info-circle"></i><span>About</span></a>
+                <a href="#content-educ"><i class="fas fa-graduation-cap"></i><span>Education</span></a>
+                <a href="#experience"><i class="fas fa-briefcase"></i><span>Experience</span></a>
+                <a href="#expertise"><i class="fas fa-code"></i><span>Expertise</span></a>
+                <a href="#achievements"><i class="fas fa-trophy"></i><span>Achievements</span></a>-->
+            </div>
+        </div>
+     <div class="central-container-educ" id="content-educ">
+        
+        <div class="section-title-educ">
+            <h2>Education</h2>
+        <div class="education-section">
+            <div class="school-info">
+                <img class="school-logo" src="C:\Users\Ash\Downloads\R.png" alt="School Logo">
+                <div class="school-details">
+                    <h3>Tertiary Level</h3>
+                    <p><i class="fas fa-calendar"></i> 2020-2024</p>
+                    <hr>
+                    <br>
+                    <h5>Bachelor of Science in Information Technology</h5>
+                    <br>
+                    <p>Western Mindanao State University</p>
+                    <br>
+                    <p><i class="fas fa-map-marker-alt"></i> Normal Rd. Baliwasan, Zamboanga City,7000, Philippines</p>
+                </div>
+            </div>
 
-            const typed = new Typed("#typed-output", options);
-        });
-           document.addEventListener("DOMContentLoaded", function() {
-        const targetSection = document.getElementById('content-home');
-        if (targetSection) {
-            targetSection.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-    document.addEventListener("DOMContentLoaded", function () {
-        // Function to toggle visibility of navbar-left based on the current section
-        function toggleNavbarLeftVisibility() {
-            const aboutSection = document.getElementById('content-about');
-            const navbarLeft = document.querySelector('.navbar-left');
+                <div class="school-info">
+                    <img class="school-logo" src="C:\Users\Ash\Downloads\R.png" alt="School Logo">
+                    <div class="school-details">
+                        <h3>Senior High</h3>
+                        <p><i class="fas fa-calendar"></i> 2018 - 2020</p>
+                        <hr>
+                        <h5>TVL-Information and Communication Technology</h5>
+                        <p>Computer Technologies Institute Inc. (COMTECH)</p>
+                        <br>
+                        <p><i class="fas fa-map-marker-alt"></i> Baliwasan Chico, Zamboanga City, 7000, Philippines</p>
+                    </div>
+                </div>
 
-            // Check if the current section is the About section
-            if (aboutSection && window.scrollY >= aboutSection.offsetTop && window.scrollY < (aboutSection.offsetTop + aboutSection.offsetHeight)) {
-                navbarLeft.style.display = 'flex'; // Show navbar-left
-            } else {
-                navbarLeft.style.display = 'none'; // Hide navbar-left
+                <div class="school-info">
+                    <img class="school-logo" src="C:\Users\Ash\Downloads\R.png" alt="School Logo">
+                    <div class="school-details">
+                        <h3>Junior High</h3>
+                        <p><i class="fas fa-calendar"></i> 2014 - 2018</p>
+                      <hr>
+                      <br>
+                      <br>
+                      <br>
+                      <br>
+                        <p>Zamboanga National High School WEST</p>
+                        <br>
+                        <p><i class="fas fa-map-marker-alt"></i> R.T. Lim Boulevard, Zamboanga City, 7000, Philippines</p>
+                    </div>     
+                </div>
+
+                <div class="school-info">
+                    <img class="school-logo" src="C:\Users\Ash\Downloads\R.png" alt="School Logo">
+                    <div class="school-details">
+                        <h3>Primary Level</h3>
+                        <p><i class="fas fa-calendar"></i> 2008 - 2014</p>
+                        <hr>
+                        <br>
+                        <br>
+                        <br>
+                        <p>Malagutay Elementary School</p>
+                        <br>
+                        <p><i class="fas fa-map-marker-alt"></i> Purok 4, Malagutay, Zamboanga City,7000, Philippines</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+        </div>
+        <!--end-->
+
+
+
+        <script>
+            // darkmode
+            function toggleDarkMode() {
+                document.body.classList.toggle("dark-mode");
             }
+        
+            document.addEventListener("DOMContentLoaded", function () {
+                // Text for typing effect
+                const typedText = ["Cherry Lou"];
+        
+                // run Typed.js
+                const options = {
+                    strings: typedText,
+                    typeSpeed: 200, // typing speed in mm
+                    loop: true, // for infinite typing
+                };
+        
+                const typed = new Typed("#typed-output", options);
+        
+                const navbarLeft = document.querySelector('.navbar-left');
+
+function toggleNavbarLeftVisibility() {
+    const homeSection = document.querySelector('#content-home');
+    const aboutSection = document.querySelector('#content-about');
+    const educationSection = document.querySelector('#content-educ');
+    const homeSectionRect = homeSection.getBoundingClientRect();
+    const aboutSectionRect = aboutSection.getBoundingClientRect();
+    const educationSectionRect = educationSection.getBoundingClientRect();
+
+    if (
+        window.scrollY < homeSectionRect.height ||
+        (window.scrollY >= educationSectionRect.top && window.scrollY < aboutSectionRect.top)
+    ) {
+        // Show navbar-left when in the home section or in the education section
+        navbarLeft.style.display = 'none';
+    } else {
+        // Hide navbar-left when outside the home and education sections
+        navbarLeft.style.display = 'flex';
+    }
+}
+
+    document.addEventListener('scroll', toggleNavbarLeftVisibility);
+    toggleNavbarLeftVisibility(); // Initial check on page load
+});
+document.addEventListener("DOMContentLoaded", function () {
+
+    const navbarLinks = document.querySelectorAll('.navbar a');
+
+    function toggleNavbarLeftVisibility() {
+        const homeSection = document.querySelector('#content-home');
+        const homeSectionRect = homeSection.getBoundingClientRect();
+
+        if (window.scrollY < homeSectionRect.height) {
+            // Show navbar-left only in the home section
+            navbarLeft.style.display = 'flex';
+
+            // Add 'active' class to Home navlink
+            navbarLinks.forEach(link => link.classList.remove('active'));
+            navbarLinks[0].classList.add('active'); // Assuming the Home navlink is the first one
+        } else {
+            // Always show navbar-left in other sections
+            navbarLeft.style.display = 'flex';
         }
+    }
+    document.addEventListener('scroll', toggleNavbarLeftVisibility);
+    toggleNavbarLeftVisibility(); // Initial check on page load
+});
 
-        // Listen for scroll events to update navbar-left visibility
-        document.addEventListener('scroll', toggleNavbarLeftVisibility);
-
-        // Initial check on page load
-        toggleNavbarLeftVisibility();
-    });
 </script>
+        
 
 </body>
 </html>

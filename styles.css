@@ -81,6 +81,26 @@ body.dark-mode {
     height: 2px; /*thickness of the line */
     transition: width 0.3s ease; /*transition for the line */
 }
+/* Add these styles to your existing CSS */
+
+.navbar a.active {
+    color: #FFA07A; /* Peach color for the active state */
+    font-weight: bold;
+}
+
+/* Adjust the transition and transform properties based on your preference */
+.navbar a.active::after {
+    width: 100%;
+    transition: width 0.3s ease, transform 0.3s ease; /* Add a smooth transition effect */
+    transform-origin: 0% 50%;
+}
+
+.navbar a:hover::after,
+.navbar a:focus::after,
+.navbar a:active::after {
+    width: 100%;
+    transform: scaleX(1.2); /* Adjust the scaling factor as needed */
+}
 
 .navbar a:hover::after,
 .navbar a:focus::after,
@@ -246,13 +266,15 @@ body.dark-mode #content-home {
     line-height: 1.5; 
 }
 
-#content-education {
+#content-educ {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 85%; /*adjust the width of central container of about section*/
     height: 100%;
-    z-index: 2; 
+    margin-top: 50%;
+    margin-right: 20px;
+    margin-left: 130px;/*adjust the left where navbar placed*/
 }
 
 #content-experience {
@@ -305,7 +327,9 @@ body.dark-mode .content-section {
     align-items: flex-start;
     text-align: center;
 }
-
+.section-title {
+    margin-left: 8%;
+}
 .section-title h2 {
     font-size: 32px;
     font-weight: bold;
@@ -428,15 +452,18 @@ body.dark-mode .content-section {
 }
 /*Left Navbar*/
 .navbar-left {
-    margin-top: 20%;
+    margin-top: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 20%;
     max-width: 1200px;
+    margin-left: 0;
     margin-bottom: 20px; 
     margin-right: 100%;
+    position: fixed;
 }
+
 
 .navbar-left-links {
     display: flex;
@@ -461,21 +488,24 @@ body.dark-mode .content-section {
     color: #F28585;
     padding: 10px;
     margin-right: 5px;
-    transition: transform 0.3s ease, background-color 0.3s ease, margin-right 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, margin-right 0.3s ease, opacity 0.3s ease;
+    opacity: 1; /* Initial opacity */
 }
 
 .navbar-left-links a:hover i {
     transform: scale(1.2);
     background-color: #333;
     margin-right: 15px;
+    opacity: 0; /* Hide the icon on hover */
 }
 
 .navbar-left-links a span {
     position: absolute;
     opacity: 0;
     white-space: nowrap;
-    color: #fff;
+    color: #70706E;
     font-weight: bold;
+    transition: opacity 0.3s ease, margin-left 0.3s ease;
 }
 
 .navbar-left-links a:hover span {
@@ -484,21 +514,6 @@ body.dark-mode .content-section {
     font-weight: bold;
 }
 
-.navbar-left-links a::before {
-    content: "";
-    position: absolute;
-    width: 30%;
-    height: 10vh;
-    border-radius: 17%;
-    background-color: #191313;
-    transition: width 0.3s ease, height 0.3s ease;
-    z-index: -1; 
-}
-
-.navbar-left-links a:hover::before {
-    width: 180%;/*width ng box sa hover ng left navbar*/
-    height: 100%;
-}
 
 .navbar-toggle {
     cursor: pointer;
@@ -512,4 +527,156 @@ body.dark-mode .content-section {
     font-size: 20px;
     margin-right: 16px;
 
+}
+
+
+
+nav {
+    padding: 10px;
+    height: 100vh;
+    position: fixed;
+    width: 80px;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.circle {
+    width: 40px;
+    height: 40px;
+    background-color: #FFEFE8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.circle i,
+.circle span {
+    position: absolute;
+    transition: opacity 0.3s ease;
+}
+
+.circle i {
+    opacity: 1;
+}
+
+.circle span {
+    opacity: 0;
+    margin-left: 100px;
+}
+
+/*education section*/
+.education-section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2%;
+    width: 100%;
+    margin-left: -4%;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #FFEFE8;
+  }
+  
+  .education-section::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: #F28585;
+  }
+  
+  /*  decorative elements */
+  .education-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to right, #F28585, transparent);
+  }
+  
+  .school-logo {
+    width: 30px; /*  size of the school logo */
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .school-info {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+  }
+  
+  /* Adjust styles for dark mode */
+  body.dark-mode .education-section {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  body.dark-mode .education-section::after {
+    background: #ddd;
+  }
+  
+  body.dark-mode .education-section::before {
+    background: linear-gradient(to right, #ddd, transparent);
+  }
+ 
+  /*section-title-educ*/
+  .section-title-educ {
+    margin-left: 8%;
+}
+.section-title-educ h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #45505b;
+    margin-left: 5%;
+}
+.section-title-educ h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+    margin-left: -40%;
+}
+
+.secondary {
+    display: flex;
+    justify-content: space-between;
+}
+
+.school-info {
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+}
+
+/*school details*/
+.school-details {
+    margin-left: 10px;
+}
+.school-details h5 {
+    font-style: italic;
+    color: #F28585;
 }
