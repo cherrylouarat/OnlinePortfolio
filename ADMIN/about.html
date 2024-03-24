@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style-admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="head">
+        <h1>Home Section - CMS Admin</h1>
+      </div>
+      <nav id="navbar" class="navbar nav-menu">
+        <ul>
+          <li><a href="index.html" class="nav-link scrollto"><i class="fas fa-home"></i></i> <span>Home</span></a></li>
+          <li><a href="about.html" class="nav-link scrollto active"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
+          <li><a href="proj.html" class="nav-link scrollto"><i class="fas fa-briefcase"></i> <span>Projects</span></a></li>
+          <li><a href="ach.html" class="nav-link scrollto"><i class="fas fa-trophy"></i> <span>Achievements</span></a></li>
+          <li><a href="cnt.html" class="nav-link scrollto"><i class="fas fa-phone"></i> <span>Contact Me</span></a></li>
+        </ul>
+      </nav>
+      <div class="container">
+        <div class="left-column">
+          <h2>Image Upload</h2>
+          <label for="imageUpload">Upload Image:</label>
+          <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+          <img id="previewImage" src="#" alt="Preview" style="max-width: 100%; margin-top: 10px; display: none;">
+
+          <form id="homeForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="course">Email Address:</label>
+            <input type="text" id="course" name="course" required>
+    
+            <label for="introduction">Phone Number:</label>
+            <input type="text" id="name" name="name" required>
+          </form>
+        </div>
+
+        <div class="right-column">
+          <form id="homeForm">
+            <label for="name">Introduction:</label>
+            <textarea id="introduction" name="introduction" rows="4" required></textarea>
+    
+            <label for="course">Current Focus:</label>
+            <textarea id="introduction" name="introduction" rows="4" required></textarea>
+    
+            <label for="introduction">Introduction:</label>
+            <textarea id="introduction" name="introduction" rows="4" required></textarea>
+          </form>
+        </div>
+      </div>
+      <h1 class="pd">PERSONAL DETAILS</h1>
+      <div class="container-about">
+        <div class="left-column">
+          <form class="form" id="aboutForm">
+            <label for="name">Age:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">Birthday:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">Citizenship:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">Street No.:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">Municipality.:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">Zip Code:</label>
+            <input type="text" id="name" name="name" required>
+          </form> 
+    
+        </div>
+
+        <div class="right-column">
+          <form class="form" id="aboutForm">
+            <label for="name">Age:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">Birthday:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">Citizenship:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">Street No.:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">Municipality.:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">Zip Code:</label>
+            <input type="text" id="name" name="name" required>
+          </form> 
+        </div>
+      </div>
+      <h1 class="pd">EDUCATIONAL BACKGROUND</h1>
+      
+      <button class="btn" type="button" onclick="saveChanges()">Save Changes</button>
+<!--
+      <form class="form" id="homeForm">
+        <h1 class="h1">PERSONAL DETAILS</h1>
+        <label for="name">Age:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Gender:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Birthday:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Birthplace:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Citizenship:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Religion:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Street No.:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Barangay:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Municipality.:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Province:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Zip Code:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="name">Country:</label>
+        <input type="text" id="name" name="name" required>
+      </form> 
+
+-->
+</body>
+</html>

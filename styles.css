@@ -17,7 +17,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     transition: background 0.3s ease;
     color: var(--text-light);
 }
@@ -57,12 +56,15 @@ body.dark-mode {
 
 /* navbar styles for the compressed layout */
 .navbar {
-    width: auto;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-
+.contact{
+    align-items: left;
+    margin-left: 600px;
+}
 .navbar a {
     color: var(--text-light);
     text-decoration: none;
@@ -223,7 +225,7 @@ body.dark-mode .sample-image img {
 #content-home {
     background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
     backdrop-filter: blur(10px); /* background blur */
-    border-radius: 10px; /* rounded courners to*/
+    border-radius: 10px; 
     border-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box shadow ni */
     padding: 20px;
@@ -265,44 +267,6 @@ body.dark-mode #content-home {
     font-size: 1.2em;
     line-height: 1.5; 
 }
-
-#content-educ {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 85%; /*adjust the width of central container of about section*/
-    height: 100%;
-    margin-top: 50%;
-    margin-right: 20px;
-    margin-left: 130px;/*adjust the left where navbar placed*/
-}
-
-#content-experience {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2; 
-}
-
-#content-expertise {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2; 
-}
-
-#content-achievements {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2; 
-}
 .content-section h2 {
     color: #F28585; 
     font-size: 2.5em;
@@ -326,9 +290,14 @@ body.dark-mode .content-section {
     justify-content: space-between;
     align-items: flex-start;
     text-align: center;
+    margin-top: 25%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 .section-title {
     margin-left: 8%;
+    margin-top: 20%;
+    text-align: center;
 }
 .section-title h2 {
     font-size: 32px;
@@ -338,6 +307,7 @@ body.dark-mode .content-section {
     padding-bottom: 20px;
     position: relative;
     color: #45505b;
+    margin-top: 12%;
 }
 .section-title h2::before {
     content: "";
@@ -347,15 +317,16 @@ body.dark-mode .content-section {
     height: 1px;
     background: #ddd;
     bottom: 1px;
-    left: calc(50% - 60px);
+    left: calc(50% - 73px);
 }
 .about-left {
+    margin-top: -12%;
     flex: 0 0 30%;
     font-size: xx-small;
     text-align: justify;
 }
 .about-left h5{
-    margin-top: -1%;
+    margin-top: 6%;
     margin-left: 20%;
     color: #70706E;
    font-size: x-small;
@@ -452,18 +423,30 @@ body.dark-mode .content-section {
 }
 /*Left Navbar*/
 .navbar-left {
-    margin-top: 50%;
+    margin-top: 47%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 20%;
-    max-width: 1200px;
-    margin-left: 0;
+    width: 95%;
     margin-bottom: 20px; 
-    margin-right: 100%;
-    position: fixed;
+    position: absolute;
 }
-
+.navbar-left ul {
+    margin: 0;
+    padding: 20pxs;
+    display: flex;
+    list-style: none;
+    align-items: right;
+    text-align: right;
+  }
+  .navbar-left li {
+    position: relative;
+  }
+  
+  .navbar-left>ul>li {
+    white-space: nowrap;
+    padding: 10px 0 10px 30px;
+  }
 
 .navbar-left-links {
     display: flex;
@@ -571,56 +554,8 @@ nav {
     margin-left: 100px;
 }
 
-/*education section*/
-.education-section {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2%;
-    width: 100%;
-    margin-left: -4%;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background: #FFEFE8;
-  }
+
   
-  .education-section::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: -10px;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background: #F28585;
-  }
-  
-  /*  decorative elements */
-  .education-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 100%;
-    background: linear-gradient(to right, #F28585, transparent);
-  }
-  
-  .school-logo {
-    width: 30px; /*  size of the school logo */
-    height: 30px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .school-info {
-    display: flex;
-    align-items: center;
-    margin-left: 5%;
-  }
   
   /* Adjust styles for dark mode */
   body.dark-mode .education-section {
@@ -635,48 +570,23 @@ nav {
     background: linear-gradient(to right, #ddd, transparent);
   }
  
-  /*section-title-educ*/
-  .section-title-educ {
-    margin-left: 8%;
-}
-.section-title-educ h2 {
-    font-size: 32px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    position: relative;
-    color: #45505b;
-    margin-left: 5%;
-}
-.section-title-educ h2::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 120px;
-    height: 1px;
-    background: #ddd;
-    bottom: 1px;
-    left: calc(50% - 60px);
-    margin-left: -40%;
+  
+
+
+.education-entry {
+    margin-bottom: 30px;
 }
 
-.secondary {
-    display: flex;
-    justify-content: space-between;
+.education-entry h2 {
+    color: #333;
 }
 
-.school-info {
-    display: flex;
-    align-items: center;
-    margin-left: 3%;
-}
-
-/*school details*/
-.school-details {
-    margin-left: 10px;
-}
-.school-details h5 {
+.education-details {
+    color: #666;
     font-style: italic;
-    color: #F28585;
+    margin-bottom: 10px;
+}
+
+.education-description {
+    color: #555;
 }
