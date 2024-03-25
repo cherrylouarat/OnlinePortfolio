@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!--NAVLINK ICONS-->
     
     <title>Cherry Lou</title>
 </head>
 <body>
-    <div class="central-container" id="content-home">
-        <div class="navbar">
+    <nav>
+        <ul>
             <div class="navbar-toggle" onclick="toggleDarkMode()">
-                <span class="icon">&#9788;</span>
-            </div>
-            <a href="#content-home">Home</a>
-            <a href="#content-about">About</a>
-            <a href="#content-experience">Projects</a>
-            <a href="#achievements">Achievements</a>
-            <div class="contact">
-            <a href="#achievements">Contact Me</a>
-            <button>Download CV</button>
-        </div>
-        </div>
-        
+                <span class="icon">&#9788;</span></div>
+          <li><a href="#content-home">Home</a></li>
+          <li><a href="#content-about">About</a></li>
+          <li><a href="#proj">Projects</a></li>
+          <li><a href="#">Achievements</a></li>
+          <div class="contact">
+            <button class="button animated-border">Download CV</button>
+             </div>
+        </ul>
+      </nav>
+  
         <div class="central-container" id="content-home" style="width: 96%; ">
             <div class="content-and-image">
                 <div class="content">
@@ -37,225 +38,11 @@
                 </div>
             </div>
         </div>
-    
-        <!-- About Section -->
-     <!--   <div class="navbar-left">
-            <div class="navbar-left-links">
-                <div class="navbar-toggle" onclick="toggleDarkMode()">
-                    <span class="icon">&#9788;</span>
-                </div>
-                <a href="#content-home">
-                    <div class="circle">
-                        <i class="fas fa-home"></i>
-                        <span>Home</span>
-                    </div>
-                </a>
-                <a href="#content-about">
-                    <div class="circle">
-                        <i class="fas fa-info-circle"></i>
-                        <span>About</span>
-                    </div>
-                </a>
-                <a href="#content-experience">
-                    <div class="circle">
-                        <i class="fas fa-briefcase"></i>
-                        <span>Projects</span>
-                    </div>
-                </a>
-                <a href="#content-achievements">
-                    <div class="circle">
-                        <i class="fas fa-trophy"></i>
-                        <span>Achievements</span>
-                    </div> 
-                </a>
-             <a href="#content-home" ><i class="fas fa-home"></i><span>Home</span></a>
-                <a href="#content-about" ><i class="fas fa-info-circle"></i><span>About</span></a>
-                <a href="#content-educ"><i class="fas fa-graduation-cap"></i><span>Education</span></a>
-                <a href="#experience"><i class="fas fa-briefcase"></i><span>Experience</span></a>
-                <a href="#expertise"><i class="fas fa-code"></i><span>Expertise</span></a>
-                <a href="#achievements"><i class="fas fa-trophy"></i><span>Achievements</span></a>
-            </div>
-        </div>
 
-        <div class="central-container" id="content-about">
-           <div class="section-title">
-            <h2>About Me</h2></div>
-                <div class="about-content">
-                    <div class="about-left">
-                        <img src="C:\Users\Ash\Desktop\OnlinePortfolio\che.jpg" alt="Cherry Lou" class="about-image">
-                    <h5>Full Name:</h5>
-                    <h4>Cherry Lou Oporto Arat</h4>
-                    <h5>Email Address:</h5>
-                    <h4>aratcherrylou@gmail.com</h4>
-                    <h5>Phone Number</h5>
-                    <h4>0912 - 439 - 9707</h4>
-                    </div>
-                    <div class="about-right">
-                        <blockquote class="about-quotation">
-                            Greetings! I'm passionate about bringing digital visions to life through captivating front-end design and programming. 
-                            As a dedicated enthusiast in the realm of web development, 
-                            I find joy in crafting visually appealing and user-friendly interfaces.
-                            </blockquote>
-                            <h3>Current Focus</h3>
-                            <blockquote class="about-quotation-focus">
-                                My current focus revolves around honing my front-end programming skills 
-                                and staying abreast of the latest design trends. 
-                                Whether it's experimenting with new frameworks or optimizing code for optimal performance, 
-                                I'm driven to create solutions that leave a lasting impression
-                                </blockquote> 
 
-                                Personal Data
-                                <div class="personal-data">
-                                    <div class="row">
-                                        <div class="column">
-                                            <h5>Age:</h5>
-                                            <h4>22</h4>
-                                        </div>
-                                        <div class="column">
-                                            <h5>Gender:</h5>
-                                            <h4>Female</h4>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="column">
-                                            <h5>Birthday:</h5>
-                                            <h4>January 05, 2002</h4>
-                                        </div>
-                                        <div class="column">
-                                            <h5>Birthplace:</h5>
-                                            <h4>Zamboanga City</h4>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="column">
-                                            <h5>Citizenship:</h5>
-                                            <h4>Filipino</h4>
-                                        </div>
-                                        <div class="column">
-                                            <h5>Religion:</h5>
-                                            <h4>Roman Catholic<h4>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="column">
-                                            <h5>Street No.:</h5>
-                                            <h4>Calle Cuatro</h4>
-                                        </div>
-                                        <div class="column">
-                                            <h5>Barangay:</h5>
-                                            <h4>Malagutay<h4>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="column">
-                                            <h5>Minucipality:</h5>
-                                            <h4>Zamboanga City</h4>
-                                        </div>
-                                        <div class="column">
-                                            <h5>Province:</h5>
-                                            <h4>Zamboanga Del Sur<h4>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="column">
-                                            <h5>Zip Code:</h5>
-                                            <h4>7000</h4>
-                                        </div>
-                                        <div class="column">
-                                            <h5>Country</h5>
-                                            <h4>Philippines <h4>
-                                        </div>
-                                    </div>
-                                </div>
-                    </div>
-                        
-                    </div>
-                </div> 
-
-        
-
-        Education 
-<div class="central-container-educ" id="content-educ">
-        
-        <div class="section-title-educ">
-            <h2>Education</h2>
-        <div class="education-section">
-            <div class="school-info">
-                <img class="school-logo" src="C:\Users\Ash\Downloads\R.png" alt="School Logo">
-                <div class="school-details">
-                    <h3>Tertiary Level</h3>
-                    <p><i class="fas fa-calendar"></i> 2020-2024</p>
-                    <hr>
-                    <br>
-                    <h5>Bachelor of Science in Information Technology</h5>
-                    <br>
-                    <p>Western Mindanao State University</p>
-                    <br>
-                    <p><i class="fas fa-map-marker-alt"></i> Normal Rd. Baliwasan, Zamboanga City,7000, Philippines</p>
-                </div>
-            </div>
-
-                <div class="school-info">
-                    <img class="school-logo" src="C:\Users\Ash\Downloads\302245211_462707115879609_2446183845576956545_n.jpg" alt="School Logo">
-                    <div class="school-details">
-                        <h3>Senior High</h3>
-                        <p><i class="fas fa-calendar"></i> 2018 - 2020</p>
-                        <hr>
-                        <h5>TVL-Information and Communication Technology</h5>
-                        <p>Computer Technologies Institute Inc. (COMTECH)</p>
-                        <br>
-                        <p><i class="fas fa-map-marker-alt"></i> Baliwasan Chico, Zamboanga City, 7000, Philippines</p>
-                    </div>
-                </div>
-
-                <div class="school-info">
-                    <img class="school-logo" src="C:\Users\Ash\Downloads\OIP.jpg" alt="School Logo">
-                    <div class="school-details">
-                        <h3>Junior High</h3>
-                        <p><i class="fas fa-calendar"></i> 2014 - 2018</p>
-                      <hr>
-                      <br>
-                      <br>
-                      <br>
-                      <br>
-                        <p>Zamboanga National High School WEST</p>
-                        <br>
-                        <p><i class="fas fa-map-marker-alt"></i> R.T. Lim Boulevard, Zamboanga City, 7000, Philippines</p>
-                    </div>     
-                </div>
-
-                <div class="school-info">
-                    <img class="school-logo" src="C:\Users\Ash\Downloads\315532727_504682158344631_7166054811404001919_n.jpg" alt="School Logo">
-                    <div class="school-details">
-                        <h3>Primary Level</h3>
-                        <p><i class="fas fa-calendar"></i> 2008 - 2014</p>
-                        <hr>
-                        <br>
-                        <br>
-                        <br>
-                        <p>Malagutay Elementary School</p>
-                        <br>
-                        <p><i class="fas fa-map-marker-alt"></i> Purok 4, Malagutay, Zamboanga City,7000, Philippines</p>
-                    </div>
-                </div>
-        </div>
-    </div>
-        </div>
-       endEDUC-->
-
-<!--COMBINED ABOUT AND EDUC-->
-<div class="navbar-left" id="fixed-navbar">
-    <ul>
-        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-        <li><a class="nav-link scrollto" href="#about">About</a></li>
-        <li><a class="nav-link scrollto" href="#services">Services</a></li>
-        <li><a class="nav-link scrollto " href="#work">Work</a></li>
-        <li><a class="nav-link scrollto " href="#blog">Blog</a></li>
-          <ul>
-</div>
 <!-- Combined About Me and Education Section -->
     <div class="section-title" id="content-about">
-        <h2>About Me</h2>
+        <h2>Want to know more about me?</h2>
     </div>
         <div class="about-content">
             <div class="about-left">
@@ -266,103 +53,128 @@
                     <h4>aratcherrylou@gmail.com</h4>
                     <h5>Phone Number</h5>
                     <h4>0912 - 439 - 9707</h4>
+
+                    <ul class="contact-list">
+                        <li class="contact-item-fb">
+                            <i class="fab fa-facebook contact-icon"></i> <a href="https://www.facebook.com/"></a>
+                        </li>
+                        <li class="contact-item-gh">
+                            <i class="fab fa-github contact-icon"></i>
+                            <a href="https://github.com/"></a>
+                        </li>
+                        <li class="contact-item-gm">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <a href="https://mail.google.com/"></a>
+                        </li>
+                        <li class="contact-item-kg">
+                            <i class="fab fa-kaggle contact-icon"></i>
+                            <a href="https://www.kaggle.com/"></a>
+                        </li>
+                        <li class="contact-item-w3">
+                            <i class="fas fa-code contact-icon"></i>
+                            <a href="https://www.w3schools.com/"></a>
+                        </li>
+                    </ul>
             </div>
                 <div class="about-right">
-                            <blockquote class="about-quotation">
-                                Greetings! I'm passionate about bringing digital visions to life through captivating front-end design and programming. 
-                                As a dedicated enthusiast in the realm of web development, 
-                                I find joy in crafting visually appealing and user-friendly interfaces.
-                                </blockquote>
-                                <h3>Current Focus</h3>
-                                <blockquote class="about-quotation-focus">
-                                    My current focus revolves around honing my front-end programming skills 
-                                    and staying abreast of the latest design trends. 
-                                    Whether it's experimenting with new frameworks or optimizing code for optimal performance, 
-                                    I'm driven to create solutions that leave a lasting impression
-                                    </blockquote>
-
-                                    <!--Personal Data-->
-                                    <div class="personal-data">
-                                        <div class="row">
-                                            <div class="column">
-                                                <h5>Age:</h5>
-                                                <h4>22</h4>
+                    <h3>EDUCATION</h3>
+                    <div class="na-timeline-item" id="mal">
+                        <div class="year-marker"><strong>1</strong></div>
+                        <div class="na-timeline-date">2005-2012 </div>
+                        <div class="na-timeline-content">
+                        |   Malagutay Elementary School
+                        </div>
+                    </div>
+                    <div class="na-timeline-item" id="west">
+                        <div class="year-marker"><strong>2</strong></div>
+                        <div class="na-timeline-date">2012-2020</div>
+                        <div class="na-timeline-content">
+                            |   Zamboanga National High School WEST
+                        </div>
+                    </div>
+                    <div class="na-timeline-item" id="comtech">
+                        <div class="year-marker"><strong>2</strong></div>
+                        <div class="na-timeline-date">2012-2020</div>
+                        <div class="na-timeline-content">
+                            |   Computer Technologies Institute Inc.
+                        </div>
+                    </div>
+                     <div class="na-timeline-item" id="wmsu">
+                        <div class="year-marker" id="icon"><strong>3</strong></div>
+                        <div class="na-timeline-date">2020-2024</div>
+                        <div class="na-timeline-content">
+                            |   Western Mindanao State University
+                        </div>
+                    </div>
+                    
+                                <h3>SOFTWARE SKILLS</h3>
+                                    <div class="container">
+                                        <div class="skills-left">
+                                            <div class="skill">
+                                                <span class="skill-name">HTML</span>
+                                                <div class="skill-bar">
+                                                    <div class="skill-level" style="width: 90%;"></div>
+                                                </div>
+                                                <span class="skill-percentage">90%</span>
                                             </div>
-                                            <div class="column">
-                                                <h5>Gender:</h5>
-                                                <h4>Female</h4>
+                                            <div class="skill">
+                                                <span class="skill-name">CSS</span>
+                                                <div class="skill-bar">
+                                                    <div class="skill-level" style="width: 85%;"></div>
+                                                </div>
+                                                <span class="skill-percentage">85%</span>
                                             </div>
+                                            <div class="skill">
+                                                <span class="skill-name">PHP</span>
+                                                <div class="skill-bar">
+                                                    <div class="skill-level" style="width: 70%;"></div>
+                                                </div>
+                                                <span class="skill-percentage">70%</span>
+                                            </div>
+                                            <div class="skill">
+                                                <span class="skill-name">C++</span>
+                                                <div class="skill-bar">
+                                                    <div class="skill-level" style="width: 50%;"></div>
+                                                </div>
+                                                <span class="skill-percentage">50%</span>
+                                            </div>
+                                            
                                         </div>
-                                        <div class="row">
-                                            <div class="column">
-                                                <h5>Birthday:</h5>
-                                                <h4>January 05, 2002</h4>
+                                        <div class="skills-right">
+                                            <div class="skill">
+                                                <span class="skill-name">PowerPoint</span>
+                                                <div class="skill-bar">
+                                                    <div class="skill-level" style="width: 95%;"></div>
+                                                </div>
+                                                <span class="skill-percentage">95%</span>
                                             </div>
-                                            <div class="column">
-                                                <h5>Birthplace:</h5>
-                                                <h4>Zamboanga City</h4>
+                                            <div class="skill">
+                                                <span class="skill-name">Word</span>
+                                                <div class="skill-bar">
+                                                    <div class="skill-level" style="width: 90%;"></div>
+                                                </div>
+                                                <span class="skill-percentage">90%</span>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="column">
-                                                <h5>Citizenship:</h5>
-                                                <h4>Filipino</h4>
+                                            <div class="skill">
+                                                <span class="skill-name">Photoshop</span>
+                                                <div class="skill-bar">
+                                                    <div class="skill-level" style="width: 90%;"></div>
+                                                </div>
+                                                <span class="skill-percentage">50%</span>
                                             </div>
-                                            <div class="column">
-                                                <h5>Religion:</h5>
-                                                <h4>Roman Catholic<h4>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="column">
-                                                <h5>Street No.:</h5>
-                                                <h4>Calle Cuatro</h4>
-                                            </div>
-                                            <div class="column">
-                                                <h5>Barangay:</h5>
-                                                <h4>Malagutay<h4>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="column">
-                                                <h5>Minucipality:</h5>
-                                                <h4>Zamboanga City</h4>
-                                            </div>
-                                            <div class="column">
-                                                <h5>Province:</h5>
-                                                <h4>Zamboanga Del Sur<h4>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="column">
-                                                <h5>Zip Code:</h5>
-                                                <h4>7000</h4>
-                                            </div>
-                                            <div class="column">
-                                                <h5>Country</h5>
-                                                <h4>Philippines <h4>
+                                            <div class="skill">
+                                                <span class="skill-name">Canva</span>
+                                                <div class="skill-bar">
+                                                    <div class="skill-level" style="width: 80%;"></div>
+                                                </div>
+                                                <span class="skill-percentage">80%</span>
                                             </div>
                                         </div>
                                     </div>
-                </div>
-        </div>  
+                                  
+</div>
 
-   <h2>Education</h2>
-          
-
-<section class="education">
-    <div class="education-entry">
-        <h2>Bachelor of Science in Computer Science</h2>
-        <p class="education-details">University Name | Graduation Year</p>
-        <p class="education-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquam dictum odio, vel tincidunt velit dignissim id. Nullam aliquet, metus quis dapibus.</p>
-    </div>
-    <div class="education-entry">
-        <h2>Web Development Certification</h2>
-        <p class="education-details">Online Course Platform | Completion Year</p>
-        <p class="education-description">Aenean nec ultricies mauris. Integer vestibulum ac dolor at efficitur. Sed id dui varius, ullamcorper purus nec, consectetur magna.</p>
-    </div>
-</section>
-</div> 
+        
         <script>
             // darkmode
             function toggleDarkMode() {

@@ -1,23 +1,10 @@
-:root {
-    --background-light: #FFEFE8;
-    --background-dark: #333;
-    --text-light: #70706E;
-    --text-dark: #ddd;
-    --navbar-hover-light: #ddd;
-    --navbar-hover-dark: #555;
-    --sample-image-border-light: #ddd;
-    --sample-image-border-dark: #222;
-}
-
 body {
     margin: 0;
     font-family: Poppins;
-    background: var(--background-light);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s ease;
     color: var(--text-light);
 }
 
@@ -28,15 +15,12 @@ body.dark-mode {
 
 .central-container {
     background-color:linear-gradient(45deg, #ffb6c1, #ffdab9);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(200px);
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     width: 90%;
+    margin-top: 10%;
     max-width: 1200px;
     height: 82vh;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -52,20 +36,43 @@ body.dark-mode {
 
 .navbar-toggle .icon {
     font-size: 20px;
+    font-style: bold;
+    margin-top: -35%;
+    color: #0c0c0c;
 }
-
-/* navbar styles for the compressed layout */
-.navbar {
+nav {
+    position: fixed;
     width: 100%;
+    height: 8%;
+    margin-left: 0;
+    margin-top: -96%;
+    background-color: #F28585;
+    z-index: 1000;  
+}
+  
+  nav ul {
+    list-style-type: none;
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.contact{
-    align-items: left;
-    margin-left: 600px;
-}
-.navbar a {
+    justify-content: space-around;
+    margin-left: -20%;
+  }
+  
+  nav li {
+    margin: 0 10px;
+    margin-left: -30%;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333; 
+    font-weight: bold;
+    margin-left: -50%;
+  }
+  
+  nav a:hover {
+    color: #666; 
+  }
+.nav a {
     color: var(--text-light);
     text-decoration: none;
     padding: 14px 10px;
@@ -74,7 +81,7 @@ body.dark-mode {
     transition: transform 0.3s ease, color 0.3s ease; /* floating sec*/
 }
 
-.navbar a::after {
+.nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -83,39 +90,69 @@ body.dark-mode {
     height: 2px; /*thickness of the line */
     transition: width 0.3s ease; /*transition for the line */
 }
-/* Add these styles to your existing CSS */
 
-.navbar a.active {
+
+nav a.active {
     color: #FFA07A; /* Peach color for the active state */
     font-weight: bold;
 }
 
-/* Adjust the transition and transform properties based on your preference */
-.navbar a.active::after {
+
+nav a.active::after {
     width: 100%;
-    transition: width 0.3s ease, transform 0.3s ease; /* Add a smooth transition effect */
+    transition: width 0.3s ease, transform 0.3s ease; 
     transform-origin: 0% 50%;
 }
 
-.navbar a:hover::after,
-.navbar a:focus::after,
-.navbar a:active::after {
+nav a:hover::after,
+nav a:focus::after,
+nav a:active::after {
     width: 100%;
-    transform: scaleX(1.2); /* Adjust the scaling factor as needed */
+    transform: scaleX(1.2); 
 }
 
-.navbar a:hover::after,
-.navbar a:focus::after,
-.navbar a:active::after {
+nav a:hover::after,
+nav a:focus::after,
+nav a:active::after {
     width: 100%; /* Expand the line  */
 }
 
-.navbar a:hover,
-.navbar a:focus,
-.navbar a:active {
-    color: #F28585; /* Change text color on hover/focus/active */
+nav a:hover,
+nav a:focus,
+nav a:active {
+    color: #fff; 
     transform: translateY(-8px); 
 }
+.button {
+    background-color: transparent;
+    border: 2px solid #333;
+    color: #333;
+    width: 120%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    margin-left: 120%;
+  }
+  
+  .button:hover {
+    border-color: #F28585; 
+  }
+  
+  @keyframes pulse {
+    0% {
+      border-color: #F28585;
+    }
+    50% {
+      border-color: #333;
+    }
+    100% {
+      border-color: #ebe5e5;
+    }
+  }
+  
+  .button.animated-border {
+    animation: pulse 2s infinite;
+  }
 
 /* darkmode navbar */
 body.dark-mode .navbar a {
@@ -165,6 +202,7 @@ body.dark-mode .navbar a:active {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin-top: 3%;
 }
 
 .content {
@@ -202,8 +240,11 @@ body.dark-mode .navbar a:active {
     height: 400px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid var(--sample-image-border-light);
+    border: 5px solid transparent; /* Initially transparent */
 }
+
+
+
 
 body.dark-mode .sample-image img {
     border: 8px solid #F28585; 
@@ -230,7 +271,6 @@ body.dark-mode .sample-image img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box shadow ni */
     padding: 20px;
     width: 96%;
-
 }
 body.dark-mode #content-home {
     background-color: rgba(0, 0, 0, 0.8); /*background color for dark mode */
@@ -257,16 +297,10 @@ body.dark-mode #content-home {
 
 .about-left h3,
 .about-right h3 {
-    color: #F28585;
+    color: #45505b;
     font-size: 2em; 
 }
 
-.about-left p,
-.about-right p {
-    color: #F28585;
-    font-size: 1.2em;
-    line-height: 1.5; 
-}
 .content-section h2 {
     color: #F28585; 
     font-size: 2.5em;
@@ -290,24 +324,23 @@ body.dark-mode .content-section {
     justify-content: space-between;
     align-items: flex-start;
     text-align: center;
-    margin-top: 25%;
+    margin-top: 20%;
     margin-left: 5%;
     margin-right: 5%;
 }
 .section-title {
     margin-left: 8%;
-    margin-top: 20%;
+    margin-top: -80%;
     text-align: center;
 }
 .section-title h2 {
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
     position: relative;
     color: #45505b;
-    margin-top: 12%;
+    margin-top: 7%;
+    margin-left: -50%;
 }
 .section-title h2::before {
     content: "";
@@ -318,12 +351,14 @@ body.dark-mode .content-section {
     background: #ddd;
     bottom: 1px;
     left: calc(50% - 73px);
+    margin-top: 8%;
 }
 .about-left {
-    margin-top: -12%;
+    margin-top: -19%;
     flex: 0 0 30%;
     font-size: xx-small;
     text-align: justify;
+    margin-left: -5%;
 }
 .about-left h5{
     margin-top: 6%;
@@ -345,18 +380,25 @@ body.dark-mode .content-section {
     margin-bottom: 20px; /* margin sa ubos */
     margin-left: 20%;
 }
-
+.about-right h3 {
+    color: #F28585;
+    margin-top: 2%;
+    margin-bottom: -1%;
+}
 .about-right {
+    margin-top: -15%;
     flex: 0 0 70%;
-    margin-left: 5%;
+    margin-left: 15%;
     text-align: justify;
 }
 .about-quotation {
-    font-size: smaller; 
+    font-size: large;
     font-style: italic; 
     color: #70706E; 
     line-height: 1.6;
-    margin-top: -5%;
+    margin-left: 50%;
+    margin-bottom: -30%;
+    width: 70%;
 }
 .about-quotation-focus {
     font-size: smaller; 
@@ -364,6 +406,7 @@ body.dark-mode .content-section {
     color: #70706E; 
     line-height: 1.6; 
     margin-top: -4%;
+    width: 70%;
 }
 /*about personal data style*/
 .personal-data {
@@ -413,14 +456,6 @@ body.dark-mode .content-section {
     margin-left: 25%;
 }
 
-/* styling for the two columns */
-.about-right h3 {
-    color: #F28585;
-    margin-top: 2%;
-}
-.about-right p {
-    color: #F28585; /* text color */
-}
 /*Left Navbar*/
 .navbar-left {
     margin-top: 47%;
@@ -513,20 +548,6 @@ body.dark-mode .content-section {
 }
 
 
-
-nav {
-    padding: 10px;
-    height: 100vh;
-    position: fixed;
-    width: 80px;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
 .circle {
     width: 40px;
     height: 40px;
@@ -571,22 +592,176 @@ nav {
   }
  
   
-
-
-.education-entry {
-    margin-bottom: 30px;
+  .contact-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    color: #F28585;
+    margin-left: 30%;
+    margin-top: 3%;
 }
-
-.education-entry h2 {
-    color: #333;
-}
-
-.education-details {
-    color: #666;
+.contact-list h4{
+    margin-right: 5%;
+    margin-left: 25%;
+    color: #45505b;
     font-style: italic;
-    margin-bottom: 10px;
+}
+.contact-list i{
+    margin-right: 10%;
+    font-size: 400%;
 }
 
-.education-description {
-    color: #555;
+/* Individual contact item */
+.contact-item-fb {
+    margin-right: 1%;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 1%;
+}
+.contact-item-gh {
+    margin-right: 1%;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 1%;
+}
+.contact-item-gm {
+    margin-right: 1%;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 1%;
+}
+.contact-item-kg {
+    margin-right: 1%;
+    margin-bottom: .9%;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 1%;
+}
+.contact-item-w3 {
+    margin-right: 1%;
+    margin-bottom: .9%;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 1%;
+}
+
+.container {
+    max-width: 67%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+.skills-left,
+.skills-right {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.skill-bar {
+    background-color: #EEEDEB;
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+    width: 50%; 
+}
+
+.skill-level {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #F28585;
+    border-radius: 10px;
+}
+
+.skill-percentage {
+    margin-left: 10px;
+}
+/* Timeline container */
+.na-timeline {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    overflow-x: auto; 
+    white-space: nowrap; 
+}
+
+/* Individual timeline items */
+.na-timeline-item {
+    position: relative;
+    margin-left: -5%;
+    margin-top: -1%;
+    margin-bottom: -40px;
+    display: inline-flex; 
+    align-items: flex-start; 
+}
+
+/* Year marker */
+.year-marker {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #F28585;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 20px; 
+    margin-top: 6%;
+    margin-left: -2%;
+    margin-bottom: 5%;
+
+}
+#wmsu{
+    margin-left: 10%;
+    margin-bottom: 1%;
+}
+#west{
+    margin-left: 10%;
+}
+#mal{
+    margin-left: 10%;
+}
+#comtech{
+    margin-left: 10%;
+}
+/* Timeline date */
+.na-timeline-date {
+    font-weight: bold;
+    margin-top: 8%;
+    margin-left: -5%;
+}
+/* Timeline content */
+.na-timeline-content {
+    flex: 1; 
+    font-size: small;
+    margin-top: 8%;
+    margin-left: 5%;
 }
