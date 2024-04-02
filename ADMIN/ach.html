@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="style-admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>ADMIN-CHERRY LOU</title>
+</head>
+<body>
+    <div class="head">
+        <h1>Achievements</h1>
+        <button class="back">Go&nbsp;Back&nbsp;To&nbsp;Portfolio&nbsp;>&nbsp;></button>
+      </div>
+      <nav id="navbar" class="navbar nav-menu">
+          <ul>
+            <li><a href="index.html" class="nav-link scrollto "><i class="fas fa-home"></i></i> <span>Home</span></a></li>
+            <li><a href="about.html" class="nav-link scrollto"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
+            <li><a href="proj.html" class="nav-link scrollto"><i class="fas fa-briefcase"></i> <span>Projects</span></a></li>
+            <li><a href="ach.html" class="nav-link scrollto active"><i class="fas fa-trophy"></i> <span>Achievements</span></a></li>
+          </ul>
+        </nav>
+        <div class="btnProj">
+            <button type="button" class="add-image-button" onclick="addImageUploadField()">Add&nbsp;Image</button>
+            <button type="button" onclick="saveChanges()">Save&nbsp;Changes</button> 
+            </div>
+        <div class="admin-panel">
+            <h2>My Projects</h2>
+            <form action="#" method="post" enctype="multipart/form-data" id="image-upload-form">
+              <div id="image-upload-container">
+                <div class="form-group">
+                  <label for="image-upload">Upload Image:</label>
+                  <input type="file" class="image-upload" name="image-upload[]" accept="image/*" onchange="previewImage(this)">
+                </div>
+              </div>
+              
+            </form>
+          </div>
+
+          <script>
+            function addImageUploadField() {
+              const container = document.getElementById('image-upload-container');
+              const newInputGroup = document.createElement('div');
+              newInputGroup.classList.add('form-group');
+              newInputGroup.innerHTML = `
+                <label for="image-upload">Upload Image:</label>
+                <input type="file" class="image-upload" name="image-upload[]" accept="image/*" onchange="previewImage(event)">
+                <img class="image-preview" style="display:none">
+              `;
+              container.appendChild(newInputGroup);
+            }
+            
+
+function previewImage(input) {
+  const preview = input.nextElementSibling.querySelector('.image-preview');
+  const file = input.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    preview.src = e.target.result;
+    preview.style.display = 'block';
+  }
+
+  reader.readAsDataURL(file);
+}
+            </script>
+</body>
+</html>

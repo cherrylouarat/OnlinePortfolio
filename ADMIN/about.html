@@ -9,7 +9,8 @@
 </head>
 <body>
     <div class="head">
-        <h1>Home Section - CMS Admin</h1>
+        <h1>About</h1>
+        <button class="back">Go&nbsp;Back&nbsp;To&nbsp;Portfolio&nbsp;>&nbsp;></button>
       </div>
       <nav id="navbar" class="navbar nav-menu">
         <ul>
@@ -17,114 +18,227 @@
           <li><a href="about.html" class="nav-link scrollto active"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
           <li><a href="proj.html" class="nav-link scrollto"><i class="fas fa-briefcase"></i> <span>Projects</span></a></li>
           <li><a href="ach.html" class="nav-link scrollto"><i class="fas fa-trophy"></i> <span>Achievements</span></a></li>
-          <li><a href="cnt.html" class="nav-link scrollto"><i class="fas fa-phone"></i> <span>Contact Me</span></a></li>
         </ul>
       </nav>
+      <button type="button" onclick="saveChanges()">Save Changes</button>   
       <div class="container">
         <div class="left-column">
           <h2>Image Upload</h2>
-          <label for="imageUpload">Upload Image:</label>
-          <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
-          <img id="previewImage" src="#" alt="Preview" style="max-width: 100%; margin-top: 10px; display: none;">
+          <label for="imageUpload">Image Attachment:</label>
+          <input type="file" id="imageUpload" name="imageUpload" accept="image/*" onchange="previewImage(event)">
+          <img id="previewImage" src="#" alt="Preview">
 
           <form id="homeForm">
-            <label for="name">Full Name:</label>
+            <h2>Social Media Accounts</h2>
+            <label for="name">Facebook Account: </label>
             <input type="text" id="name" name="name" required>
-    
+      
+            <label for="course">Github Account:</label>
+            <input type="text" id="course" name="course" required>
+      
+            <label for="introduction">Gmail Account:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required>
+          </form>
+        </div>
+      
+        <div class="right-column">
+          <form id="homeForm">
+            <h2>Personal Details</h2>
+            <label for="name">FullName: </label>
+            <input type="text" id="name" name="name" required>
+      
             <label for="course">Email Address:</label>
             <input type="text" id="course" name="course" required>
-    
-            <label for="introduction">Phone Number:</label>
-            <input type="text" id="name" name="name" required>
-          </form>
-        </div>
-
-        <div class="right-column">
-          <form id="homeForm">
-            <label for="name">Introduction:</label>
-            <textarea id="introduction" name="introduction" rows="4" required></textarea>
-    
-            <label for="course">Current Focus:</label>
-            <textarea id="introduction" name="introduction" rows="4" required></textarea>
-    
-            <label for="introduction">Introduction:</label>
-            <textarea id="introduction" name="introduction" rows="4" required></textarea>
-          </form>
-        </div>
-      </div>
-      <h1 class="pd">PERSONAL DETAILS</h1>
-      <div class="container-about">
-        <div class="left-column">
-          <form class="form" id="aboutForm">
-            <label for="name">Age:</label>
-            <input type="text" id="name" name="name" required>
-              <form id="birthday-form">
-                  <div class="form-group">
-                      <label for="birthday">Birthday:</label>
-                      <input type="date" id="birthday" name="birthday">
-                  </div>
-              </form>
-            <label for="name">Citizenship:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="name">Street No.:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="name">Municipality.:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="name">Zip Code:</label>
-            <input type="text" id="name" name="name" required>
-          </form> 
-    
-        </div>
-
-        <div class="right-column">
-          <form class="form" id="aboutForm">
-            <label for="name">Age:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="name">Birthday:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="name">Citizenship:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="name">Street No.:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="name">Municipality.:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="name">Zip Code:</label>
-            <input type="text" id="name" name="name" required>
-          </form> 
-        </div>
-      </div>
-      <h1 class="pd">EDUCATIONAL BACKGROUND</h1>
       
-      <button class="btn" type="button" onclick="saveChanges()">Save Changes</button>
-<!--
-      <form class="form" id="homeForm">
-        <h1 class="h1">PERSONAL DETAILS</h1>
-        <label for="name">Age:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Gender:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Birthday:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Birthplace:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Citizenship:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Religion:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Street No.:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Barangay:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Municipality.:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Province:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Zip Code:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Country:</label>
-        <input type="text" id="name" name="name" required>
-      </form> 
+            <label for="introduction">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" required>
+          </form>
+        </div>
+      </div>
+      <div class="admin-panel">
+        <h2>Educational Background</h2>
+        <form action="update_education.php" method="post" id="education-form">
+          <div class="education-level">
+            <h3>Elementary</h3>
+            <div class="form-group">
+              <label for="elementary_name">School Name:</label>
+              <input type="text" id="elementary_name" name="elementary_name">
+            </div>
+            <div class="form-group">
+              <label for="elementary_duration">Duration (dd/mm/yyyy - dd/mm/yyyy):</label>
+              <input type="number" id="elementary_day_from" name="elementary_day_from" placeholder="From Day" min="1" max="31">
+              <input type="number" id="elementary_month_from" name="elementary_month_from" placeholder="From Month" min="1" max="12">
+              <input type="number" id="elementary_year_from" name="elementary_year_from" placeholder="From Year" min="1900">
+              -
+              <input type="number" id="elementary_day_to" name="elementary_day_to" placeholder="To Day" min="1" max="31">
+              <input type="number" id="elementary_month_to" name="elementary_month_to" placeholder="To Month" min="1" max="12">
+              <input type="number" id="elementary_year_to" name="elementary_year_to" placeholder="To Year" min="1900">
+            </div>
+          </div>
+      
+          <div class="education-level">
+            <h3>Senior High School</h3>
+            <div class="form-group">
+              <label for="senior_high_name">School Name:</label>
+              <input type="text" id="senior_high_name" name="senior_high_name">
+            </div>
+            <div class="form-group">
+              <label for="senior_high_track">Track:</label>
+              <input type="text" id="senior_high_track" name="senior_high_track">
+            </div>
+            <div class="form-group">
+              <label for="senior_high_strand">Strand:</label>
+              <input type="text" id="senior_high_strand" name="senior_high_strand">
+            </div>
+            <div class="form-group">
+              <label for="senior_high_duration">Duration (dd/mm/yyyy - dd/mm/yyyy):</label>
+              <input type="number" id="senior_high_day_from" name="senior_high_day_from" placeholder="From Day" min="1" max="31">
+              <input type="number" id="senior_high_month_from" name="senior_high_month_from" placeholder="From Month" min="1" max="12">
+              <input type="number" id="senior_high_year_from" name="senior_high_year_from" placeholder="From Year" min="1900">
+              -
+              <input type="number" id="senior_high_day_to" name="senior_high_day_to" placeholder="To Day" min="1" max="31">
+              <input type="number" id="senior_high_month_to" name="senior_high_month_to" placeholder="To Month" min="1" max="12">
+              <input type="number" id="senior_high_year_to" name="senior_high_year_to" placeholder="To Year" min="1900">
+            </div>
+          </div>
+      
+          <div class="education-level">
+            <h3>College</h3>
+            <div class="form-group">
+              <label for="college_name">School Name:</label>
+              <input type="text" id="college_name" name="college_name">
+            </div>
+            <div class="form-group">
+              <label for="college_course">Course:</label>
+              <input type="text" id="college_course" name="college_course">
+            </div>
+            <div class="form-group">
+              <label for="college_duration">Duration (dd/mm/yyyy - dd/mm/yyyy):</label>
+              <input type="number" id="college_day_from" name="college_day_from" placeholder="From Day" min="1" max="31">
+              <input type="number" id="college_month_from" name="college_month_from" placeholder="From Month" min="1" max="12">
+              <input type="number" id="college_year_from" name="college_year_from" placeholder="From Year" min="1900">
+              -
+              <input type="number" id="college_day_to" name="college_day_to" placeholder="To Day" min="1" max="31">
+              <input type="number" id="college_month_to" name="college_month_to" placeholder="To Month" min="1" max="12">
+              <input type="number" id="college_year_to" name="college_year_to" placeholder="To Year" min="1900">
+            </div>
+          </div>
+    
+        </form>
+      </div>
+      <div class="admin-panel">
+        <h2>Software Skills</h2>
+      
+        <form action="update_skills.php" method="post" id="skills-form">
+          <div class="skills-container">
+            <div class="skill-column">
+              <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill" id="prog-languages">
+                </div>
+                <button type="button" class="add-skill" data-category="prog-languages">Add Programming Language</button>
+              </div>
+            </div>
+            <div class="skill-column">
+              <div class="skill-category">
+                <h3>Design Tools</h3>
+                <div class="skill" id="design-tools">
+                </div>
+                <button type="button" class="add-skill" data-category="design-tools">Add Design Tool</button>
+              </div>
+            </div>
+          </div>
+          
+        </form>
+      </div>
+      
+      <script>
 
--->
-</body>
-</html>
+        document.addEventListener('DOMContentLoaded', function() {
+          const form = document.getElementById('education-form');
+          const addButton = document.createElement('button');
+          addButton.textContent = 'Add Education';
+          addButton.type = 'button';
+          addButton.addEventListener('click', function() {
+            const newEducationLevel = document.createElement('div');
+            newEducationLevel.classList.add('education-level');
+            newEducationLevel.innerHTML = `
+              <h3>Education Level</h3>
+              <div class="form-group">
+                <label for="school_name">School Name:</label>
+                <input type="text" name="school_name">
+              </div>
+              <div class="form-group">
+              <label for="college_course">Course:</label>
+              <input type="text" id="college_course" name="college_course">
+            </div>
+              <div class="form-group">
+                <label for="duration">Duration:</label>
+                <input type="number" name="day_from" placeholder="From Day" min="1" max="31">
+                <input type="number" name="month_from" placeholder="From Month" min="1" max="12">
+                <input type="number" name="year_from" placeholder="From Year" min="1900">
+                -
+                <input type="number" name="day_to" placeholder="To Day" min="1" max="31">
+                <input type="number" name="month_to" placeholder="To Month" min="1" max="12">
+                <input type="number" name="year_to" placeholder="To Year" min="1900">
+              </div>
+            `;
+            form.insertBefore(newEducationLevel, addButton);
+          });
+          form.appendChild(addButton);
+        });
+
+        function previewImage(event) {
+        var preview = document.getElementById('previewImage');
+        var file = event.target.files[0];
+        
+        if (file) {
+          var reader = new FileReader();
+          reader.onloadend = function() {
+            preview.src = reader.result;
+            preview.style.display = 'block';
+          }
+          reader.readAsDataURL(file);
+        } else {
+          preview.src = '';
+          preview.style.display = 'none';
+        }
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+  const addButton = document.querySelectorAll('.add-skill');
+
+  addButton.forEach(button => {
+    button.addEventListener('click', function() {
+      const category = this.getAttribute('data-category');
+      addNewSkill(category);
+    });
+  });
+
+  function addNewSkill(category) {
+    const skillCount = document.querySelectorAll(`#${category} .skill`).length + 1;
+
+    const newSkill = document.createElement('div');
+    newSkill.classList.add('skill');
+    newSkill.innerHTML = `
+      <input type="text" class="rename-input" value="Skill ${skillCount}">
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 50%;"></div>
+      </div>
+      <span class="skill-percentage">Level: <input type="number" class="percentage-input" name="percentage_${category}_${skillCount}" min="0" max="100" value="50">% </span>
+    `;
+
+    document.getElementById(category).appendChild(newSkill);
+
+    const percentageInput = newSkill.querySelector('.percentage-input');
+    const skillLevel = newSkill.querySelector('.skill-level');
+
+    percentageInput.addEventListener('input', function() {
+      const percentage = this.value;
+      skillLevel.style.width = percentage + '%';
+    });
+  }
+});
+
+      </script>
+     </body>
+     </html>

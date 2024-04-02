@@ -10,7 +10,8 @@
 </head>
 <body>
     <div class="head">
-      <h1>Home Section - CMS Admin</h1>
+      <h1>Home</h1>
+      <button class="back">Go&nbsp;Back&nbsp;To&nbsp;Portfolio&nbsp;>&nbsp;></button>
     </div>
     <nav id="navbar" class="navbar nav-menu">
         <ul>
@@ -18,36 +19,54 @@
           <li><a href="about.html" class="nav-link scrollto"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
           <li><a href="proj.html" class="nav-link scrollto"><i class="fas fa-briefcase"></i> <span>Projects</span></a></li>
           <li><a href="ach.html" class="nav-link scrollto"><i class="fas fa-trophy"></i> <span>Achievements</span></a></li>
-          <li><a href="cnt.html" class="nav-link scrollto"><i class="fas fa-phone"></i> <span>Contact Me</span></a></li>
         </ul>
       </nav>
-      
+      <button type="button" onclick="saveChanges()">Save Changes</button>   
       <div class="container">
         <div class="left-column">
           <h2>Image Upload</h2>
-          <label for="imageUpload">Upload Image:</label>
-          <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
-          <img id="previewImage" src="#" alt="Preview" style="max-width: 100%; margin-top: 10px; display: none;">
+          <label for="imageUpload">Image Attachment:</label>
+          <input type="file" id="imageUpload" name="imageUpload" accept="image/*" onchange="previewImage(event)">
+          <img id="previewImage" src="#" alt="Preview">
         </div>
-
+      
         <div class="right-column">
           <form id="homeForm">
+            <h2>Personal Information</h2>
             <label for="name">Name: </label>
             <input type="text" id="name" name="name" required>
-    
+      
             <label for="course">Course:</label>
             <input type="text" id="course" name="course" required>
-    
+      
             <label for="introduction">Introduction:</label>
             <textarea id="introduction" name="introduction" rows="4" required></textarea>
           </form>
+          <h2>Curriculum Vitae</h2>
+    <form id="cvUploadForm" enctype="multipart/form-data">
+      <label for="adminCV">Upload CV:</label>
+      <input type="file" id="adminCV" name="adminCV" accept=".pdf,.doc,.docx">
+    </form>
         </div>
       </div>
-      <button type="button" onclick="saveChanges()">Save Changes</button>
-      </body>
-      </html>
-          
 
-    </div>
+      <script>
+      function previewImage(event) {
+        var preview = document.getElementById('previewImage');
+        var file = event.target.files[0];
+        
+        if (file) {
+          var reader = new FileReader();
+          reader.onloadend = function() {
+            preview.src = reader.result;
+            preview.style.display = 'block';
+          }
+          reader.readAsDataURL(file);
+        } else {
+          preview.src = '';
+          preview.style.display = 'none';
+        }
+      }
+      </script>
 </body>
 </html>

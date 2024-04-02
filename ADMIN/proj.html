@@ -1,25 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style-admin.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="head">
-        <h1>Home Section - CMS Admin</h1>
-      </div>
-      <nav id="navbar" class="navbar nav-menu">
+        <h1>Projects</h1>
+        <button class="back">Go&nbsp;Back&nbsp;To&nbsp;Portfolio&nbsp;>&nbsp;></button>
+    </div>
+    <nav id="navbar" class="navbar nav-menu">
         <ul>
-          <li><a href="index.html" class="nav-link scrollto"><i class="fas fa-home"></i></i> <span>Home</span></a></li>
-          <li><a href="about.html" class="nav-link scrollto"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
-          <li><a href="proj.html" class="nav-link scrollto active"><i class="fas fa-briefcase"></i> <span>Projects</span></a></li>
-          <li><a href="ach.html" class="nav-link scrollto"><i class="fas fa-trophy"></i> <span>Achievements</span></a></li>
-          <li><a href="cnt.html" class="nav-link scrollto"><i class="fas fa-phone"></i> <span>Contact Me</span></a></li>
+            <li><a href="index.html" class="nav-link scrollto"><i class="fas fa-home"></i></i> <span>Home</span></a></li>
+            <li><a href="about.html" class="nav-link scrollto"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
+            <li><a href="proj.html" class="nav-link scrollto active"><i class="fas fa-briefcase"></i> <span>Projects</span></a></li>
+            <li><a href="ach.html" class="nav-link scrollto"><i class="fas fa-trophy"></i> <span>Achievements</span></a></li>
         </ul>
-      </nav>
+    </nav>
+    <div class="btnProj">
+    <button class="addp" type="button" onclick="addProject()">Add&nbsp;Project</button>
+    <button type="button" onclick="saveChanges()">Save&nbsp;Changes</button> 
+    </div>
+    <div class="admin-panel">
+        <h2>Admin Panel</h2>
+        <form action="admin_process.php" method="post" enctype="multipart/form-data" id="project-form">
+            
+            <div id="project-fields">
+                <div class="project">
+                    
+        </form>
+    </div>
 
+    <script>
+      var projectCount = 0; 
+  
+      function addProject() {
+          projectCount++; 
+  
+          var projectFields = document.getElementById('project-fields');
+          var newProject = document.createElement('div');
+          newProject.classList.add('project');
+          newProject.innerHTML = `
+              <h3>Project ${projectCount}</h3>
+              <div class="form-group">
+                  <label for="image">Choose Image:</label>
+                  <input type="file" name="image[]" onchange="previewImage(event, ${projectCount})" required>
+              </div>
+              <div class="form-group">
+                  <label>Image Preview:</label>
+                  <div id="imagePreview${projectCount}">
+                      <img id="previewImage${projectCount}" src="" alt="Preview" style="max-width: 200px;">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="project_name">Project Name:</label>
+                  <input type="text" name="project_name[]" required>
+              </div>
+              <div class="form-group">
+                  <label for="project_link">Project Link:</label>
+                  <input type="text" name="project_link[]" required>
+              </div>
+          `;
+          projectFields.appendChild(newProject);
+      }
+  
+      function previewImage(event, count) {
+        var input = event.target;
+        var preview = document.querySelector(`#imagePreview${count} img`);
+        var file = input.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function () {
+            preview.src = reader.result;
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+  </script>
+  
 </body>
 </html>

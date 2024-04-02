@@ -18,10 +18,10 @@
                 <span class="icon">&#9788;</span></div>
           <li><a href="#content-home">Home</a></li>
           <li><a href="#content-about">About</a></li>
-          <li><a href="#proj">Projects</a></li>
-          <li><a href="#">Achievements</a></li>
+          <li><a href="#content-proj">Projects</a></li>
+          <li><a href="#ach-title">Achievements</a></li>
           <div class="contact">
-            <button class="button animated-border">Download CV</button>
+            <button class="button animated-border" href="TRIPOD(1).pdf">Download CV</button>
              </div>
         </ul>
       </nav>
@@ -37,12 +37,16 @@
                     <img src="C:\Users\Ash\Desktop\OnlinePortfolio\che.jpg" alt="Sample Image">
                 </div>
             </div>
+           <div class="hire">
+            <h3  class="mind">Have Any Project in Mind?</h3>
+            <a href="hireMe.html"><button class="hm">Reach Me</button></a>
+            </div>
         </div>
 
 
-<!-- Combined About Me and Education Section -->
+
     <div class="section-title" id="content-about">
-        <h2>Want to know more about me?</h2>
+        <h2>About Me</h2>
     </div>
         <div class="about-content">
             <div class="about-left">
@@ -65,14 +69,6 @@
                         <li class="contact-item-gm">
                             <i class="fas fa-envelope contact-icon"></i>
                             <a href="https://mail.google.com/"></a>
-                        </li>
-                        <li class="contact-item-kg">
-                            <i class="fab fa-kaggle contact-icon"></i>
-                            <a href="https://www.kaggle.com/"></a>
-                        </li>
-                        <li class="contact-item-w3">
-                            <i class="fas fa-code contact-icon"></i>
-                            <a href="https://www.w3schools.com/"></a>
                         </li>
                     </ul>
             </div>
@@ -173,7 +169,54 @@
                                     </div>
                                   
 </div>
+</div>
+<div id="content-proj">
+<h1>PROJECTS</h1>
+<section class="projects-container" >
+    <div class="project-item">
+        <img src="che.jpg" alt="Project 1">
+        <h3>FinQuant: A motion Recognition Fish Counting Application</h3>
+    </div>
+    <div class="project-item">
+        <img src="che.jpg" alt="Project 2">
+        <h3>Project 2</h3>
+    </div>
+    <div class="project-item">
+        <img src="che.jpg" alt="Project 3">
+        <h3>Project 3</h3>
+    </div>
+    <div class="project-item">
+        <img src="che.jpg" alt="Project 1">
+        <h3>Project 1</h3>
+    </div>
+    <div class="project-item">
+        <img src="che.jpg" alt="Project 1">
+        <h3>Project 1</h3>
+    </div>
+    <div class="project-item">
+        <img src="che.jpg" alt="Project 1">
+        <h3>Project 1</h3>
+    </div>
 
+</section>
+</div>
+<div id="content-ach">
+    <h1 id ="ach-title">ACHIEVEMENTS</h1>
+<main class="slider">
+    <div class="slider-track">
+        <img src="che.jpg" class="slider-image">
+        <img src="che.jpg" class="slider-image">
+        <img src="che.jpg" class="slider-image">
+        <img src="che.jpg" class="slider-image">
+    </div>
+</main>
+</div>
+<footer id="footer" class="hidden">
+    <div class="footer-content">
+      <p>&copy; 2024 Cherry Lou Arat</p>
+      <p>BSIT - 4B</p>
+    </div>
+  </footer>
         
         <script>
             // darkmode
@@ -184,8 +227,6 @@
             document.addEventListener("DOMContentLoaded", function () {
                 // Text for typing effect
                 const typedText = ["Cherry Lou"];
-        
-                // run Typed.js
                 const options = {
                     strings: typedText,
                     typeSpeed: 200, // typing speed in mm
@@ -193,28 +234,79 @@
                 };
         
                 const typed = new Typed("#typed-output", options);
-        
-                const navbarLeft = document.querySelector('.navbar-left');
-                document.addEventListener("scroll", toggleNavbarLeftVisibility);
-        toggleNavbarLeftVisibility(); // Initial check on page load
-
-        function toggleNavbarLeftVisibility() {
-            var aboutSection = document.getElementById("content-about");
-            var navbarLeft = document.querySelector('.navbar-left');
-
-            if (aboutSection && navbarLeft) {
-                var aboutSectionOffset = aboutSection.offsetTop;
-                var scrollPosition = window.scrollY;
-
-                // Show/hide navbar based on scroll position
-                if (scrollPosition >= aboutSectionOffset) {
-                    navbarLeft.style.display = 'flex';
-                } else {
-                    navbarLeft.style.display = 'none';
-                }
-            }
-        }
     });
+    const slider = document.querySelector('.slider');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 3;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+  var footer = document.getElementById('footer');
+  var observer = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting) {
+      footer.classList.add('visible');
+    } else {
+      footer.classList.remove('visible');
+    }
+  });
+
+  var achievementsSection = document.getElementById('content-ach');
+  observer.observe(achievementsSection);
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    function handleNavLinkClick(event) {
+        event.preventDefault();
+        const targetId = event.currentTarget.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.remove('active');
+        });
+
+        event.currentTarget.classList.add('active');
+        targetSection.classList.add('active');
+
+        window.scrollTo({
+            top: targetSection.offsetTop - 100, 
+            behavior: 'smooth'
+        });
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', handleNavLinkClick);
+    });
+});
 
 </script>
         
