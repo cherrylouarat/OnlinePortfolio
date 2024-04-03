@@ -14,22 +14,30 @@ body {
   flex-direction: row;
 
 }
-.back{
-  margin-top: 1%;
-  margin-left: 55%;
+
+.back {
+  display: inline-block; 
+  margin-left: 300%;
   padding: 10px 30px;
-  width: 22%;
-  height: 5%;
   background-color: #FFE6E6;
   color: #45505b;
   text-align: left;
   border-style: groove;
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; 
+  border: none; 
+  outline: none; 
+  transition: background-color 0.3s, color 0.5s; 
+  font-style: oblique;
 }
-.back:hover{
+
+.back:hover {
   color: #fff;
-  text-align: left;
-  align-items: left;
+  background-color: #F28585; /* Change background color on hover */
+  border-style: groove;
 }
+
+
 .nav-menu {
   padding: 0;
   margin-top: 0;
