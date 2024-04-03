@@ -8,11 +8,6 @@ body {
     color: var(--text-light);
 }
 
-body.dark-mode {
-    background: var(--background-dark);
-    color: var(--text-dark);
-}
-
 .central-container {
     background-color:linear-gradient(45deg, #ffb6c1, #ffdab9);
     padding: 20px;
@@ -24,21 +19,6 @@ body.dark-mode {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
-
-
-.navbar-toggle {
-    cursor: pointer;
-    padding: 10px;
-    display: flex;  
-    align-items: center;
-}
-
-.navbar-toggle .icon {
-    font-size: 20px;
-    font-style: bold;
-    margin-top: -35%;
-    color: #0c0c0c;
 }
 nav {
     position: fixed;
@@ -54,11 +34,10 @@ nav {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
-    margin-left: -20%;
+    margin-left: -10%;
   }
   
   nav li {
-    margin: 0 10px;
     margin-left: -25%;
   }
   
@@ -66,7 +45,7 @@ nav {
     text-decoration: none;
     color: #fff; 
     font-weight: bold;
-    margin-left: -50%;
+    margin-left: -10%;
   }
   nav ul li a.active {
     background-color: #fff; /* Change background color for active link */
@@ -74,7 +53,6 @@ nav {
     padding: 5px 10px; /* Adjust padding for active link */
     border-radius: 5px; /* Add border-radius for active link */
     transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth color change */
-    margin-left: 2%;
   }
   
 
@@ -109,50 +87,6 @@ nav {
     background-color: #fff;
     color: #F28585;
   }
-
-/* darkmode navbar */
-body.dark-mode .navbar a {
-    color: #ddd;
-    text-decoration: none;
-    padding: 14px 10px;
-    display: inline-block;
-    position: relative; 
-    transition: transform 0.3s ease, color 0.3s ease; 
-}
-
-body.dark-mode .navbar a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    transition: width 0.3s ease; 
-}
-
-body.dark-mode .navbar a:hover::after,
-body.dark-mode .navbar a:focus::after,
-body.dark-mode .navbar a:active::after {
-    width: 100%; 
-}
-
-body.dark-mode .navbar a:hover,
-body.dark-mode .navbar a:focus,
-body.dark-mode .navbar a:active {
-    color: #F28585; 
-    transform: translateY(-8px); 
-}
-
-/*end darkmode navbar*/
-
-
-.mode-toggle {
-    cursor: pointer;
-    padding: 10px;
-    background-color: var(--background-light);
-    border-radius: 5px;
-}
-
 .content-and-image {
     display: flex;
     align-items: center;
@@ -226,13 +160,6 @@ body.dark-mode .navbar a:active {
     font-style: oblique;
     color: #7D7C7C;
 }
-
-
-
-body.dark-mode .sample-image img {
-    border: 8px solid #F28585; 
-}
-
 /* content sections */
 .content-section {
     margin-top: 40px;
@@ -254,12 +181,6 @@ body.dark-mode .sample-image img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* box shadow ni */
     padding: 20px;
     width: 96%;
-}
-body.dark-mode #content-home {
-    background-color: rgba(0, 0, 0, 0.8); 
-    border-color: rgba(255, 255, 255, 0.3); 
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); 
-    color: var(--text-dark); /*  text color for dark mode */
 }
 #content-about {
     position: absolute;
@@ -289,19 +210,10 @@ body.dark-mode #content-home {
     font-size: 2.5em;
     margin-bottom: 10px;
 }
-
-/* content section */
 .content-section p {
     font-size: 1.2em;
     color: var(--text-light);
 }
-
-body.dark-mode .content-section {
-    background-color: rgba(0, 0, 0, 0.8); 
-    color: var(--text-dark); 
-}
-
-/* two-column layout */
 .about-content {
     display: flex;
     justify-content: space-between;
@@ -496,18 +408,6 @@ body.dark-mode .content-section {
     opacity: 0;
     margin-left: 100px;
 }
-  body.dark-mode .education-section {
-    background: rgba(0, 0, 0, 0.8);
-  }
-  
-  body.dark-mode .education-section::after {
-    background: #ddd;
-  }
-  
-  body.dark-mode .education-section::before {
-    background: linear-gradient(to right, #ddd, transparent);
-  }
- 
   .contact-list li {
     margin-right: 5%;
 }
@@ -792,3 +692,130 @@ footer {
     pointer-events: auto;
     transition: opacity 0.8s ease-in-out;
   }
+
+
+
+body.dark-mode {
+    background: #333; 
+    color: #ddd; 
+}
+
+
+body.dark-mode nav {
+    background-color: #333; 
+}
+
+body.dark-mode nav a {
+    color: #F28585; 
+}
+
+
+body.dark-mode .button {
+    border-color: #ddd; 
+    color: #ddd; 
+}
+
+.mode-toggle {
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--background-light);
+    border-radius: 5px;
+    margin-top: -10px;
+}
+body.dark-mode .mode-toggle{
+    color: #ddd;
+    margin-top: -8px;
+}
+body.dark-mode .container{
+    background-color: #222;
+}
+body.dark-mode h3{
+    color: #ddd;
+}
+body.dark-mode #ach-title{
+    color: #ddd;
+}
+body.dark-mode #content-proj h1{
+    color: #ddd;
+}
+body.dark-mode .section-title h2{
+    color: #ddd;
+}
+body.dark-mode .about-left h5{
+    color: #ddd;
+}
+body.dark-mode footer{
+    color: #ddd;
+    background-color: #333;
+}
+body.dark-mode .about-image{
+    border: 5px solid #F28585; 
+    border-style: inset;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 700px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hire{
+        margin-top: -2%;
+        margin-left: 24%;
+    }
+    
+    nav li {
+        margin: 10px 0;
+    }
+    
+    .central-container {
+        margin-top: 10%;
+    }
+    
+    .content-and-image {
+        flex-direction: column;
+    }
+
+    .sample-image {
+        margin: 20px 0;
+    }
+
+    .content-section {
+        padding: 10px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+    #content-about{
+        margin-top: 40%;
+        margin-left: -12%;
+    }
+    .about-left,
+    .about-right {
+        margin-top: 45%;
+    }
+    #content-proj{
+        margin-top: 10%;
+    }
+    .projects-container {
+        width: 90%;
+        margin-top: 80px;
+    }
+
+    .project-item {
+        width: 70%;
+        margin: 0;
+    }
+
+    .slider {
+        width: 70%;
+        height: 300px;
+        margin-left: 5%;
+    }
+
+    .footer-content {
+        padding: 20px;
+    }
+}
+

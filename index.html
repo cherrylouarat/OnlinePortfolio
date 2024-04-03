@@ -14,8 +14,7 @@
 <body>
     <nav>
         <ul>
-            <div class="navbar-toggle" onclick="toggleDarkMode()">
-                <span class="icon">&#9788;</span></div>
+            <button class="mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
           <li><a href="#content-home">Home</a></li>
           <li><a href="#content-about">About</a></li>
           <li><a href="#content-proj">Projects</a></li>
@@ -219,10 +218,10 @@
   </footer>
         
         <script>
-            // darkmode
-            function toggleDarkMode() {
-                document.body.classList.toggle("dark-mode");
-            }
+             function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
         
             document.addEventListener("DOMContentLoaded", function () {
                 // Text for typing effect
@@ -307,7 +306,6 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', handleNavLinkClick);
     });
 });
-
 </script>
         
 

@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <title>ADMIN-CHERRY LOU</title>
-   
 </head>
 <body>
     <div class="head">
         <h1>Achievements</h1>
-        <button class="back">Go Back To Portfolio ></button>
+        <a href="../index.html"><button class="back">Go&nbsp;Back&nbsp;To&nbsp;Portfolio&nbsp;>&nbsp;></button></a>
     </div>
     <nav id="navbar" class="navbar nav-menu">
         <ul>
@@ -23,23 +22,23 @@
         </ul>
     </nav>
     <div class="btnProj">
-        <button type="button" onclick="addImage()">Add Image</button>
-        <button type="button" onclick="saveChanges()">Save Changes</button> 
+        <button type="button" onclick="addImage()">Add&nbsp;Image</button>
+        <button type="button" onclick="saveChanges()">Save&nbsp;Changes</button> 
     </div>
     <div class="admin-panel">
         <h2>My Projects</h2>
-        <div id="image-container">
- 
+        <div class="image-container" id="image-container">
+           
         </div>
     </div>
 
     <script>
         function addImage() {
             const container = document.getElementById('image-container');
-            const imagePlaceholder = document.createElement('div');
-            imagePlaceholder.classList.add('image-placeholder');
-            imagePlaceholder.innerHTML = '<input type="file" onchange="previewImage(event)"><i class="fas fa-image"></i>';
-            container.appendChild(imagePlaceholder);
+            const imageBox = document.createElement('div');
+            imageBox.classList.add('image-box');
+            imageBox.innerHTML = '<input type="file" onchange="previewImage(event)"><i class="fas fa-image"></i>';
+            container.appendChild(imageBox);
         }
 
         function previewImage(event) {
@@ -47,23 +46,19 @@
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function() {
-                    const container = event.target.closest('.image-placeholder');
-                    const image = container.querySelector('img');
-                    if (!image) {
-                        const newImage = document.createElement('img');
-                        newImage.src = reader.result;
-                        newImage.classList.add('preview');
-                        container.appendChild(newImage);
-                    } else {
-                        image.src = reader.result;
-                    }
+                    const container = event.target.closest('.image-box');
+                    const icon = container.querySelector('.fas');
+                    icon.style.display = 'none'; 
+                    const image = document.createElement('img');
+                    image.src = reader.result;
+                    container.appendChild(image);
                 }
                 reader.readAsDataURL(file);
             }
         }
 
         function saveChanges() {
-    
+           
         }
     </script>
 </body>
